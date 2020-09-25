@@ -31,8 +31,7 @@ class TravelPackageController extends Controller
      */
     public function create()
     {
-        return view('pages.admin.travel-package.c
-        reate');
+        return view('pages.admin.travel-package.create');
     }
 
     /**

@@ -22,7 +22,7 @@
         @endif
 
         <div class="card shadow">
-            <div class="card body">
+            <div class="card-body">
                 <form action="{{ route('travel-package.update', $item->id ) }}" method="post">
                     @method('PUT')
                     @csrf

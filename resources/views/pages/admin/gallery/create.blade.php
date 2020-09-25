@@ -22,7 +22,7 @@
         @endif
 
         <div class="card shadow">
-            <div class="card body">
+            <div class="card-body">
                 <form action="{{ route('gallery.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
@@ -36,10 +36,12 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="image">Image</label>
-                        <input type="file" class="form-control" name="image" placeholder="Image" class="form-control">
+                    <div class="custom-file">
+                        <label for="image" class="custom-file-label">Image</label>
+                        <input type="file" class="custom-file-input mb-3" name="image" placeholder="Image">
                     </div>
+                    <br>
+                    <br>
                     <button type="submit" class="btn btn-primary btn-block">
                         Save
                     </button>

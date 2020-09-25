@@ -21,8 +21,8 @@
         </div>
         @endif
 
-        <div class="card shadow">
-            <div class="card body">
+        <div class="card shadow mb-3">
+            <div class="card-body">
                 <form action="{{ route('travel-package.store') }}" method="post">
                     @csrf
                     <div class="form-group">
@@ -61,10 +61,16 @@
                         <label for="type">type</label>
                         <input type="text" class="form-control" name="type" placeholder="Type" value="{{ old('type') }}">
                     </div>
-                    <div class="form-group">
-                        <label for="price">Price</label>
-                        <input type="number" class="form-control" name="price" placeholder="Price" value="{{ old('price') }}">
-                    </div>
+                    <label for="price">Price</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">Rp.</span>
+                        </div>
+                        <input class="form-control" type="number" name="price" value="{{ old('price') }}">
+                        <div class="input-group-append">
+                          <span class="input-group-text">,-</span>
+                        </div>
+                      </div>
                     <button type="submit" class="btn btn-primary btn-block">
                         Save
                     </button>

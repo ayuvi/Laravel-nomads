@@ -14,8 +14,8 @@
     <div class="row">
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" width="100%" cellspacing="0">
-                    <thead>
+                <table class="table table-bordered table-hover table-sm" width="100%" cellspacing="0">
+                    <thead class="thead-dark">
                         <tr>
                             <th>ID</th>
                             <th>Title</th>

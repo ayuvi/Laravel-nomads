@@ -24,7 +24,7 @@ Route::get('/checkout/{id}', 'CheckoutController@index')
       ->name('checkout')
       ->middleware('auth','verified');
 
-Route::get('/checkout/create/{detail_id}', 'CheckoutController@create')
+Route::post('/checkout/create/{detail_id}', 'CheckoutController@create')
     ->name('checkout-create')
     ->middleware('auth','verified');
 

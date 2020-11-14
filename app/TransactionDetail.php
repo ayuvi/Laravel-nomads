@@ -20,7 +20,7 @@ class TransactionDetail extends Model
     public function transaction()
     {
         // yang berarti tramsaction mempunyai beberapa data di transaction detail
-        return $this->belongsTo(Transaction::class, 'transactions_id', 'id');
+        return $this->belongsTo( Transaction::class, 'transactions_id', 'id' );
     }
 
 

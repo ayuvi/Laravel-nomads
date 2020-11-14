@@ -20,6 +20,6 @@ class Gallery extends Model
     // fungsi belongsto adalah fungsi relasi untuk banyak gallery dimiliki oleh satu travel package
     public function travel_package()
     {
-        return $this->belongsTo(TravelPackage::class, 'travel_packages_id', 'id');
+        return $this->belongsTo( TravelPackage::class, 'travel_packages_id', 'id' );
     }
 }

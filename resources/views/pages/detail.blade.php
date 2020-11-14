@@ -30,12 +30,17 @@
                         @if ($item->galleries->count())
                         <div class="gallery">
                             <div class="xzoom-container">
-                                <img src="{{ Storage::url($item->galleries->first()->image )}}" class="xzoom" id="xzoom-default" xoriginal="{{ Storage::url($item->galleries->first()->image )}}" />
+                                <img src="{{ Storage::url($item->galleries->first()->image )}}"
+                                class="xzoom"
+                                id="xzoom-default"
+                                xoriginal="{{ Storage::url($item->galleries->first()->image )}}" />
                             </div>
                             <div class="xzoom-thumbs">
                                 @foreach ($item->galleries as $gallery)
                                 <a href="{{ Storage::url($gallery->image) }}">
-                                    <img src="{{ Storage::url($gallery->image) }}" class="xzoom-gallery" width="128" xpreview="{{ Storage::url($gallery->image) }}" />
+                                    <img src="{{ Storage::url($gallery->image) }}"
+                                    class="xzoom-gallery" width="128"
+                                    xpreview="{{ Storage::url($gallery->image) }}" />
                                 </a>
                                 @endforeach
                             </div>

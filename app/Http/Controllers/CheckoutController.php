@@ -51,11 +51,11 @@ class CheckoutController extends Controller
 
         if($item->is_visa)
         {
-            $transaction->transaction_total -= 190;
-            $transaction->transaction_visa -= 190;
+            $transaction->transactional_total -= 190;
+            $transaction->additional_visa -= 190;
         }
 
-        $transaction->transaction_total -= $transaction->travel_package->price;
+        $transaction->transactional_total -= $transaction->travel_package->price;
 
         $transaction->save();
         $item->delete();
@@ -73,7 +73,7 @@ class CheckoutController extends Controller
         ]);
 
         $data = $request->all();
-        $data['transaction_id'] = $id;
+        $data['transactions_id'] = $id;
 
         TransactionDetail::create($data);
 
@@ -81,11 +81,11 @@ class CheckoutController extends Controller
 
         if($request->is_visa)
         {
-            $transaction->transaction_total += 190;
-            $transaction->transaction_visa += 190;
+            $transaction->transactional_total += 190;
+            $transaction->additional_visa += 190;
         }
 
-        $transaction->transaction_total += $transaction->travel_package->price;
+        $transaction->transactional_total += $transaction->travel_package->price;
 
         $transaction->save();
 
@@ -95,8 +95,8 @@ class CheckoutController extends Controller
 
     public function success(Request $request, $id)
     {
-        $transaction = Transaction::findOrdFail($id);
-        $transaction->transaction_status = 'PENDING';
+        $transaction = Transaction::findOrFail($id);
+        $transaction->transactional_status = 'PENDING';
 
         $transaction->save();
         return view('pages.success');
